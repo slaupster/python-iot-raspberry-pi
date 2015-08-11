@@ -12,11 +12,10 @@ client = None
 
 def myCommandCallback(cmd):
     if cmd.event == "light":
-        command = cmd.payload["d"]["command"]
-        print command
-        if command == "on":
+        print cmd.command
+        if cmd.command == "on":
             GPIO.output(17, True)
-        elif command == "off":
+        elif cmd.command == "off":
             GPIO.output(17, False)
 
 try:
